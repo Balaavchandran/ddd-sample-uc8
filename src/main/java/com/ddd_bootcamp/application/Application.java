@@ -12,6 +12,29 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
+        //codeProblem7();
+
+        System.out.println("-------------------------------------------------------------------");
+        Price applePencilPrice = CompetitorBasedPricer.getPrice("Apple Pencil");
+        System.out.println("Discounted Price for Apple Pencil: " + applePencilPrice);
+        Price sonyWirelessHeadphonePrice = CompetitorBasedPricer.getPrice("Sony Wireless headphone");
+        System.out.println("Discounted Price for Sony Wireless headphone: "
+                + sonyWirelessHeadphonePrice);
+        System.out.println("-------------------------------------------------------------------");
+
+        Cart cart = new Cart();
+
+        cart.add(new Item( new Product("Apple Pencil",applePencilPrice), 1));
+        cart.add(new Item( new Product("Sony Wireless headphone",sonyWirelessHeadphonePrice), 1));
+
+        System.out.println("cart = " + cart);
+
+        //Code Problem 6
+        //codeProblem6();
+
+    }
+
+    private static void codeProblem7() {
         Cart cart = new Cart();
 
         Product headphone = new Product("Sony Wireless headphone", new Price(BigDecimal.valueOf(10), Currency.getInstance("USD")));
@@ -26,15 +49,6 @@ public class Application {
         System.out.println("Cart = " + cart);
         List<Item> items = cart.getItems();
         System.out.println("items = " + items);
-
-        System.out.println("-------------------------------------------------------------------");
-        System.out.println("Discounted Price for Apple Pencil: " + CompetitorBasedPricer.getPrice("Apple Pencil"));
-        System.out.println("Discounted Price for Sony Wireless headphone: " + CompetitorBasedPricer.getPrice("Sony Wireless headphone"));
-        System.out.println("-------------------------------------------------------------------");
-
-        //Code Problem 6
-        //codeProblem6();
-
     }
 
 

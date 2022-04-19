@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.Objects;
 
-public class Price {
+public class Price implements ValueObject<Price>{
     private BigDecimal value;
     private Currency currency;
 
@@ -28,6 +28,13 @@ public class Price {
     @Override
     public int hashCode() {
         return Objects.hash(value, currency);
+    }
+
+    @Override
+    public boolean sameValueAs(Price other) {
+        if (this == other) return true;
+        if (!value.equals(other.value)) return false;
+        return currency.equals(other.currency);
     }
 
 
