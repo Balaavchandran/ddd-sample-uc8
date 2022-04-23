@@ -15,11 +15,16 @@ public class Application {
         //codeProblem7();
 
         System.out.println("-------------------------------------------------------------------");
+
         Price applePencilPrice = CompetitorBasedPricer.getPrice("Apple Pencil");
+
         System.out.println("Discounted Price for Apple Pencil: " + applePencilPrice);
+
         Price sonyWirelessHeadphonePrice = CompetitorBasedPricer.getPrice("Sony Wireless headphone");
+
         System.out.println("Discounted Price for Sony Wireless headphone: "
                 + sonyWirelessHeadphonePrice);
+
         System.out.println("-------------------------------------------------------------------");
 
         Cart cart = new Cart();
